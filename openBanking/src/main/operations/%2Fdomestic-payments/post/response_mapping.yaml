@@ -1,0 +1,29 @@
+---
+version: 1
+response_201.yaml:
+  condition: "$zosAssetResponse.commarea.\"CONSTAPI-N\".\"DFHCA-RETURN-CD\" = 0"
+  httpStatusCode: 201
+response_400.yaml:
+  condition: "$zosAssetResponse.commarea.\"CONSTAPI-N\".\"DFHCA-RETURN-CD\" != 0"
+  httpStatusCode: 400
+response_401.yaml:
+  condition: "$zosAssetResponse.commarea.\"CONSTAPI-N\".\"DFHCA-RETURN-CD\" = 2432"
+  httpStatusCode: 401
+response_403.yaml:
+  condition: "$zosAssetResponse.commarea.\"CONSTAPI-N\".\"DFHCA-RETURN-CD\" = 23"
+  httpStatusCode: 403
+response_405.yaml:
+  condition: "$zosAssetResponse.commarea.\"CONSTAPI-N\".\"DFHCA-RETURN-CD\" = 435"
+  httpStatusCode: 405
+response_406.yaml:
+  condition: "$zosAssetResponse.commarea.\"CONSTAPI-N\".\"DFHCA-RETURN-CD\" = 76"
+  httpStatusCode: 406
+response_415.yaml:
+  condition: "$zosAssetResponse.commarea.\"CONSTAPI-N\".\"DFHCA-RETURN-CD\" = 687"
+  httpStatusCode: 415
+response_429.yaml:
+  condition: "$zosAssetResponse.commarea.\"CONSTAPI-N\".\"DFHCA-RETURN-CD\" = 56"
+  httpStatusCode: 429
+response_500.yaml:
+  condition: true
+  httpStatusCode: 500

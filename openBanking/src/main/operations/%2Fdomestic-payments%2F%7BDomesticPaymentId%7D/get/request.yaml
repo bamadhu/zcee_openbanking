@@ -1,0 +1,10 @@
+---
+mappings:
+- commarea:
+    mappings:
+    - CONSTAPI-N:
+        mappings:
+        - DFHCA-DOMESTIC-PAY-ID:
+            expression: "$pathParameters.DomesticPaymentId"
+        - DFHCA-CONSENT-REQ:
+            template: "S"

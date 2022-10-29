@@ -1,0 +1,25 @@
+---
+mappings:
+- header:
+    mappings:
+    - x-fapi-interaction-id:
+        template: "dasfds"
+    - x-jws-signature:
+        template: "sfdsd"
+- body:
+    mappings:
+    - Data:
+        mappings:
+        - FundsAvailableResult:
+            mappings:
+            - FundsAvailableDateTime:
+                template: "{{$zosAssetResponse.commarea.\"CONSTAPI-N\".\"DFHCA-CREATE-TS\"\
+                  }}"
+            - FundsAvailable:
+                expression: "($zosAssetResponse.commarea.\"CONSTAPI-N\".\"DFHCA-FUNDS-AVAIL-FLAG\"\
+                  \ = \"1\")?\"true\":\"false\""
+    - Links:
+        mappings:
+        - Self:
+            template: "http://self.com"
+version: 1

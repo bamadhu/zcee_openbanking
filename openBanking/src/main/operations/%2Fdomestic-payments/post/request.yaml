@@ -1,0 +1,10 @@
+---
+mappings:
+- commarea:
+    mappings:
+    - CONSTAPI-N:
+        mappings:
+        - DFHCA-CONSENT-REQ:
+            template: "P"
+        - DFHCA-CONSENT-ID:
+            expression: "$body.Data.ConsentId"

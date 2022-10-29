@@ -1,0 +1,25 @@
+---
+mappings:
+- header:
+    mappings:
+    - x-fapi-interaction-id:
+        template: "sads"
+    - x-jws-signature:
+        template: "asdas"
+- body:
+    mappings:
+    - Code:
+        template: "{{$zosAssetResponse.commarea.\"CONSTAPI-N\".\"DFHCA-RETURN-CD\"\
+          }}"
+    - Message:
+        template: "{{$zosAssetResponse.commarea.\"CONSTAPI-N\".\"DFHCA-ERROR-MSG\"\
+          }}"
+    - Errors:
+        foreach:
+          input: "1"
+          mappings:
+          - ErrorCode:
+              template: "adsf"
+          - Message:
+              template: "sdf"
+version: 1

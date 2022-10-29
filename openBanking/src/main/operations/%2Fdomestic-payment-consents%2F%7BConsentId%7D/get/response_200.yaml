@@ -1,0 +1,100 @@
+---
+mappings:
+- header:
+    mappings:
+    - x-fapi-interaction-id:
+        template: "fghfg"
+    - x-jws-signature:
+        template: "fgh"
+- body:
+    mappings:
+    - Data:
+        mappings:
+        - ConsentId:
+            template: "{{$zosAssetResponse.commarea.\"CONSTAPI-N\".\"DFHCA-CONSENT-ID\"\
+              }}"
+        - CreationDateTime:
+            template: "{{$zosAssetResponse.commarea.\"CONSTAPI-N\".\"DFHCA-CREATE-TS\"\
+              }}"
+        - Status:
+            template: "{{($zosAssetResponse.commarea.\"CONSTAPI-N\".\"DFHCA-CONSENT-STATUS\"\
+              \ = \"A\") ? \"Authorised\" : ($zosAssetResponse.commarea.\"CONSTAPI-N\"\
+              .\"DFHCA-CONSENT-STATUS\" = \"W\") ? \"AwaitingAuthorisation\": ($zosAssetResponse.commarea.\"\
+              CONSTAPI-N\".\"DFHCA-CONSENT-STATUS\" = \"C\")? \"Consumed\": ($zosAssetResponse.commarea.\"\
+              CONSTAPI-N\".\"DFHCA-CONSENT-STATUS\" = \"R\") ? \"Rejected\"}}"
+        - StatusUpdateDateTime:
+            template: "{{$zosAssetResponse.commarea.\"CONSTAPI-N\".\"DFHCA-LAST-UPDATE-TS\"\
+              }}"
+        - Charges:
+            foreach:
+              input: "1"
+              mappings:
+              - ChargeBearer:
+                  template: "{{$zosAssetResponse.commarea.\"CONSTAPI-N\".\"DFHCA-CHARGES\"\
+                    .\"DFHCA-CHARGE-BEARER\"}}"
+              - Type:
+                  template: "{{$zosAssetResponse.commarea.\"CONSTAPI-N\".\"DFHCA-CHARGES\"\
+                    .\"DFHCA-CHARGE-TYPE\"}}"
+              - Amount:
+                  mappings:
+                  - Amount:
+                      template: "{{$zosAssetResponse.commarea.\"CONSTAPI-N\".\"DFHCA-CHARGES\"\
+                        .\"DFHCA-CHARGE-AMOUNT\".\"DFHCA-CHARGE-AMT\"}}"
+                  - Currency:
+                      template: "{{$zosAssetResponse.commarea.\"CONSTAPI-N\".\"DFHCA-CHARGES\"\
+                        .\"DFHCA-CHARGE-AMOUNT\".\"DFHCA-CHARGE-CUR-CD\"}}"
+        - Initiation:
+            mappings:
+            - InstructionIdentification:
+                template: "1"
+            - EndToEndIdentification:
+                template: "2"
+            - InstructedAmount:
+                mappings:
+                - Amount:
+                    template: "{{$zosAssetResponse.commarea.\"CONSTAPI-N\".\"DFHCA-CONSENT-AMOUNT\"\
+                      }}"
+                - Currency:
+                    template: "{{$zosAssetResponse.commarea.\"CONSTAPI-N\".\"DFHCA-CURRENCY-CD\"\
+                      }}"
+            - DebtorAccount:
+                mappings:
+                - SchemeName:
+                    template: "{{$zosAssetResponse.commarea.\"CONSTAPI-N\".\"DFHCA-DEBIT-AC-SCHEMENAME\"\
+                      }}"
+                - Identification:
+                    template: "{{$zosAssetResponse.commarea.\"CONSTAPI-N\".\"DFHCA-DEBIT-AC\"\
+                      }}"
+                - Name:
+                    template: "{{$zosAssetResponse.commarea.\"CONSTAPI-N\".\"DFHCA-DEBIT-AC-CUSTNAME\"\
+                      }}"
+            - CreditorAccount:
+                mappings:
+                - SchemeName:
+                    template: "{{$zosAssetResponse.commarea.\"CONSTAPI-N\".\"DFHCA-CREDIT-AC-SCHEMENAME\"\
+                      }}"
+                - Identification:
+                    template: "{{$zosAssetResponse.commarea.\"CONSTAPI-N\".\"DFHCA-CREDIT-AC\"\
+                      }}"
+                - Name:
+                    template: "{{$zosAssetResponse.commarea.\"CONSTAPI-N\".\"DFHCA-CREDIT-AC-CUSTNAME\"\
+                      }}"
+        - Authorisation:
+            mappings:
+            - AuthorisationType:
+                template: "Any"
+    - Risk:
+        mappings:
+        - PaymentContextCode:
+            template: "BillPayment"
+        - DeliveryAddress:
+            mappings:
+            - TownName:
+                template: "kajsdhf"
+            - Country:
+                template: "US"
+    - Links:
+        mappings:
+        - Self:
+            template: "http://self.com"
+version: 1

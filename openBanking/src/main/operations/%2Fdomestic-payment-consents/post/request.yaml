@@ -1,0 +1,24 @@
+---
+mappings:
+- commarea:
+    mappings:
+    - CONSTAPI-N:
+        mappings:
+        - DFHCA-CONSENT-REQ:
+            template: "C"
+        - DFHCA-CREDIT-AC:
+            template: "{{$body.Data.Initiation.CreditorAccount.Identification}}"
+        - DFHCA-CREDIT-AC-SCHEMENAME:
+            template: "{{$body.Data.Initiation.CreditorAccount.SchemeName}}"
+        - DFHCA-CREDIT-AC-CUSTNAME:
+            template: "{{$body.Data.Initiation.CreditorAccount.Name}}"
+        - DFHCA-DEBIT-AC:
+            template: "{{$body.Data.Initiation.DebtorAccount.Identification}}"
+        - DFHCA-DEBIT-AC-SCHEMENAME:
+            template: "{{$body.Data.Initiation.DebtorAccount.SchemeName}}"
+        - DFHCA-DEBIT-AC-CUSTNAME:
+            template: "{{$body.Data.Initiation.DebtorAccount.Name}}"
+        - DFHCA-CONSENT-AMOUNT:
+            expression: "$body.Data.Initiation.InstructedAmount.Amount"
+        - DFHCA-CURRENCY-CD:
+            template: "{{$body.Data.Initiation.InstructedAmount.Currency}}"

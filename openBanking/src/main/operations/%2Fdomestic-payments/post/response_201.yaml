@@ -1,0 +1,110 @@
+---
+mappings:
+- header:
+    mappings:
+    - x-fapi-interaction-id:
+        template: "dfgdfg"
+    - x-jws-signature:
+        template: "fgdfg"
+- body:
+    mappings:
+    - Data:
+        mappings:
+        - DomesticPaymentId:
+            template: "{{$zosAssetResponse.commarea.\"CONSTAPI-N\".\"DFHCA-DOMESTIC-PAY-ID\"\
+              }}"
+        - ConsentId:
+            template: "{{$zosAssetResponse.commarea.\"CONSTAPI-N\".\"DFHCA-CONSENT-ID\"\
+              }}"
+        - CreationDateTime:
+            template: "{{$zosAssetResponse.commarea.\"CONSTAPI-N\".\"DFHCA-CREATE-TS\"\
+              }}"
+        - Status:
+            template: "{{($zosAssetResponse.commarea.\"CONSTAPI-N\".\"DFHCA-DOMESTIC-PAY-STATUS\"\
+              \ = \"ACSC\") ? \"AcceptedCreditSettlementCompleted\" : ($zosAssetResponse.commarea.\"\
+              CONSTAPI-N\".\"DFHCA-DOMESTIC-PAY-STATUS\" = \"ASC\") ? \"AcceptedSettlementCompleted\"\
+              : ($zosAssetResponse.commarea.\"CONSTAPI-N\".\"DFHCA-DOMESTIC-PAY-STATUS\"\
+              \ = \"ASIP\")? \"AcceptedSettlementInProcess\": ($zosAssetResponse.commarea.\"\
+              CONSTAPI-N\".\"DFHCA-DOMESTIC-PAY-STATUS\" = \"AWP\") ? \"AcceptedWithoutPosting\"\
+              :($zosAssetResponse.commarea.\"CONSTAPI-N\".\"DFHCA-DOMESTIC-PAY-STATUS\"\
+              \ = \"P\") ? \"Pending\":($zosAssetResponse.commarea.\"CONSTAPI-N\"\
+              .\"DFHCA-DOMESTIC-PAY-STATUS\" = \"R\") ? \"Rejected\"}}"
+        - StatusUpdateDateTime:
+            template: "{{$zosAssetResponse.commarea.\"CONSTAPI-N\".\"DFHCA-LAST-UPDATE-TS\"\
+              }}"
+        - Refund:
+            mappings:
+            - Account:
+                mappings:
+                - SchemeName:
+                    template: "{{$zosAssetResponse.commarea.\"CONSTAPI-N\".\"DFHCA-DEBIT-AC-SCHEMENAME\"\
+                      }}"
+                - Identification:
+                    template: "{{$zosAssetResponse.commarea.\"CONSTAPI-N\".\"DFHCA-DEBIT-AC\"\
+                      }}"
+                - Name:
+                    template: "{{$zosAssetResponse.commarea.\"CONSTAPI-N\".\"DFHCA-DEBIT-AC-CUSTNAME\"\
+                      }}"
+        - Charges:
+            foreach:
+              input: "1"
+              mappings:
+              - ChargeBearer:
+                  template: "{{$zosAssetResponse.commarea.\"CONSTAPI-N\".\"DFHCA-CHARGES\"\
+                    .\"DFHCA-CHARGE-BEARER\"}}"
+              - Type:
+                  template: "{{$zosAssetResponse.commarea.\"CONSTAPI-N\".\"DFHCA-CHARGES\"\
+                    .\"DFHCA-CHARGE-TYPE\"}}"
+              - Amount:
+                  mappings:
+                  - Amount:
+                      template: "{{$zosAssetResponse.commarea.\"CONSTAPI-N\".\"DFHCA-CHARGES\"\
+                        .\"DFHCA-CHARGE-AMOUNT\"}}"
+                  - Currency:
+                      template: "{{$zosAssetResponse.commarea.\"CONSTAPI-N\".\"DFHCA-CHARGES\"\
+                        .\"DFHCA-CHARGE-AMOUNT\".\"DFHCA-CHARGE-CUR-CD\"}}"
+        - Initiation:
+            mappings:
+            - InstructionIdentification:
+                template: "1"
+            - EndToEndIdentification:
+                template: "2"
+            - InstructedAmount:
+                mappings:
+                - Amount:
+                    template: "{{$zosAssetResponse.commarea.\"CONSTAPI-N\".\"DFHCA-CONSENT-AMOUNT\"\
+                      }}"
+                - Currency:
+                    template: "{{$zosAssetResponse.commarea.\"CONSTAPI-N\".\"DFHCA-CURRENCY-CD\"\
+                      }}"
+            - DebtorAccount:
+                mappings:
+                - SchemeName:
+                    template: "{{$zosAssetResponse.commarea.\"CONSTAPI-N\".\"DFHCA-DEBIT-AC-SCHEMENAME\"\
+                      }}"
+                - Identification:
+                    template: "{{$zosAssetResponse.commarea.\"CONSTAPI-N\".\"DFHCA-DEBIT-AC\"\
+                      }}"
+                - Name:
+                    template: "{{$zosAssetResponse.commarea.\"CONSTAPI-N\".\"DFHCA-DEBIT-AC-CUSTNAME\"\
+                      }}"
+            - CreditorAccount:
+                mappings:
+                - SchemeName:
+                    template: "{{$zosAssetResponse.commarea.\"CONSTAPI-N\".\"DFHCA-CREDIT-AC-SCHEMENAME\"\
+                      }}"
+                - Identification:
+                    template: "{{$zosAssetResponse.commarea.\"CONSTAPI-N\".\"DFHCA-CREDIT-AC\"\
+                      }}"
+                - Name:
+                    template: "{{$zosAssetResponse.commarea.\"CONSTAPI-N\".\"DFHCA-CREDIT-AC-CUSTNAME\"\
+                      }}"
+        - MultiAuthorisation:
+            mappings:
+            - Status:
+                template: "done"
+    - Links:
+        mappings:
+        - Self:
+            template: "http://self.com"
+version: 1

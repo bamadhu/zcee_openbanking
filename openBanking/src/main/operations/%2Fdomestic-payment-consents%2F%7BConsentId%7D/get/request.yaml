@@ -1,0 +1,10 @@
+---
+mappings:
+- commarea:
+    mappings:
+    - CONSTAPI-N:
+        mappings:
+        - DFHCA-CONSENT-REQ:
+            template: "G"
+        - DFHCA-CONSENT-ID:
+            expression: "$pathParameters.ConsentId"

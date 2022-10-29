@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:message xmlns:ns2="http://www.ibm.com/ims/Transaction" direction="0">
+    <message id="1">
+        <segment id="1">
+            <field name="CONSTAPI-N" originalName="CONSTAPI-N" included="Y" path="CONSTAPI-N" fileName="CONSTAPI-N.cpy" structureIndex="0" structSrcFileName="CONSTAPI-N.cpy" srcLine="01 CONSTAPI-N.">
+                <startPos>1</startPos>
+                <bytes>595</bytes>
+                <maxBytes>595</maxBytes>
+                <applicationDatatype datatype="STRUCT"/>
+                <field name="DFHCA-CONSENT-REQ" originalName="DFHCA-CONSENT-REQ" included="Y" path="CONSTAPI-N.DFHCA-CONSENT-REQ" srcLine="10 DFHCA-CONSENT-REQ PIC X USAGE DISPLAY.">
+                    <startPos>1</startPos>
+                    <bytes>1</bytes>
+                    <maxBytes>1</maxBytes>
+                    <applicationDatatype datatype="CHAR"/>
+                </field>
+                <field name="DFHCA-CONSENT-ID" originalName="DFHCA-CONSENT-ID" included="Y" path="CONSTAPI-N.DFHCA-CONSENT-ID" srcLine="10 DFHCA-CONSENT-ID PIC 9(9) USAGE DISPLAY.">
+                    <startPos>2</startPos>
+                    <bytes>9</bytes>
+                    <maxBytes>9</maxBytes>
+                    <marshaller isSigned="N" isSignLeading="N" isSignSeparate="N" isWCHAROnly="N">
+                        <typeConverter>ZONEDDECIMAL</typeConverter>
+                    </marshaller>
+                    <applicationDatatype datatype="DECIMAL" precision="9" scale="0"/>
+                </field>
+                <field name="DFHCA-CONSENT-STATUS" originalName="DFHCA-CONSENT-STATUS" included="Y" path="CONSTAPI-N.DFHCA-CONSENT-STATUS" srcLine="10 DFHCA-CONSENT-STATUS PIC X USAGE DISPLAY.">
+                    <startPos>11</startPos>
+                    <bytes>1</bytes>
+                    <maxBytes>1</maxBytes>
+                    <applicationDatatype datatype="CHAR"/>
+                </field>
+                <field name="DFHCA-DOMESTIC-PAY-ID" originalName="DFHCA-DOMESTIC-PAY-ID" included="Y" path="CONSTAPI-N.DFHCA-DOMESTIC-PAY-ID" srcLine="10 DFHCA-DOMESTIC-PAY-ID PIC 9(9) USAGE DISPLAY.">
+                    <startPos>12</startPos>
+                    <bytes>9</bytes>
+                    <maxBytes>9</maxBytes>
+                    <marshaller isSigned="N" isSignLeading="N" isSignSeparate="N" isWCHAROnly="N">
+                        <typeConverter>ZONEDDECIMAL</typeConverter>
+                    </marshaller>
+                    <applicationDatatype datatype="DECIMAL" precision="9" scale="0"/>
+                </field>
+                <field name="DFHCA-DOMESTIC-PAY-STATUS" originalName="DFHCA-DOMESTIC-PAY-STATUS" included="Y" path="CONSTAPI-N.DFHCA-DOMESTIC-PAY-STATUS" srcLine="10 DFHCA-DOMESTIC-PAY-STATUS PIC X(4) USAGE DISPLAY.">
+                    <startPos>21</startPos>
+                    <bytes>4</bytes>
+                    <maxBytes>4</maxBytes>
+                    <applicationDatatype datatype="CHAR"/>
+                </field>
+                <field name="DFHCA-CREDIT-AC" originalName="DFHCA-CREDIT-AC" included="Y" path="CONSTAPI-N.DFHCA-CREDIT-AC" srcLine="10 DFHCA-CREDIT-AC PIC X(16) USAGE DISPLAY.">
+                    <startPos>25</startPos>
+                    <bytes>16</bytes>
+                    <maxBytes>16</maxBytes>
+                    <applicationDatatype datatype="CHAR"/>
+                </field>
+                <field name="DFHCA-CREDIT-AC-SCHEMENAME" originalName="DFHCA-CREDIT-AC-SCHEMENAME" included="Y" path="CONSTAPI-N.DFHCA-CREDIT-AC-SCHEMENAME" srcLine="10 DFHCA-CREDIT-AC-SCHEMENAME PIC X(50) USAGE DISPLAY.">
+                    <startPos>41</startPos>
+                    <bytes>50</bytes>
+                    <maxBytes>50</maxBytes>
+                    <applicationDatatype datatype="CHAR"/>
+                </field>
+                <field name="DFHCA-CREDIT-AC-CUSTNAME" originalName="DFHCA-CREDIT-AC-CUSTNAME" included="Y" path="CONSTAPI-N.DFHCA-CREDIT-AC-CUSTNAME" srcLine="10 DFHCA-CREDIT-AC-CUSTNAME PIC X(50) USAGE DISPLAY.">
+                    <startPos>91</startPos>
+                    <bytes>50</bytes>
+                    <maxBytes>50</maxBytes>
+                    <applicationDatatype datatype="CHAR"/>
+                </field>
+                <field name="DFHCA-DEBIT-AC" originalName="DFHCA-DEBIT-AC" included="Y" path="CONSTAPI-N.DFHCA-DEBIT-AC" srcLine="10 DFHCA-DEBIT-AC PIC X(16) USAGE DISPLAY.">
+                    <startPos>141</startPos>
+                    <bytes>16</bytes>
+                    <maxBytes>16</maxBytes>
+                    <applicationDatatype datatype="CHAR"/>
+                </field>
+                <field name="DFHCA-DEBIT-AC-SCHEMENAME" originalName="DFHCA-DEBIT-AC-SCHEMENAME" included="Y" path="CONSTAPI-N.DFHCA-DEBIT-AC-SCHEMENAME" srcLine="10 DFHCA-DEBIT-AC-SCHEMENAME PIC X(50) USAGE DISPLAY.">
+                    <startPos>157</startPos>
+                    <bytes>50</bytes>
+                    <maxBytes>50</maxBytes>
+                    <applicationDatatype datatype="CHAR"/>
+                </field>
+                <field name="DFHCA-DEBIT-AC-CUSTNAME" originalName="DFHCA-DEBIT-AC-CUSTNAME" included="Y" path="CONSTAPI-N.DFHCA-DEBIT-AC-CUSTNAME" srcLine="10 DFHCA-DEBIT-AC-CUSTNAME PIC X(50) USAGE DISPLAY.">
+                    <startPos>207</startPos>
+                    <bytes>50</bytes>
+                    <maxBytes>50</maxBytes>
+                    <applicationDatatype datatype="CHAR"/>
+                </field>
+                <field name="DFHCA-CONSENT-AMOUNT" originalName="DFHCA-CONSENT-AMOUNT" included="Y" path="CONSTAPI-N.DFHCA-CONSENT-AMOUNT" srcLine="10 DFHCA-CONSENT-AMOUNT PIC S9(10)V9(2) USAGE DISPLAY.">
+                    <startPos>257</startPos>
+                    <bytes>12</bytes>
+                    <maxBytes>12</maxBytes>
+                    <marshaller isSigned="Y" isSignLeading="N" isSignSeparate="N" isWCHAROnly="N">
+                        <typeConverter>ZONEDDECIMAL</typeConverter>
+                    </marshaller>
+                    <applicationDatatype datatype="DECIMAL" precision="12" scale="2"/>
+                </field>
+                <field name="DFHCA-CURRENCY-CD" originalName="DFHCA-CURRENCY-CD" included="Y" path="CONSTAPI-N.DFHCA-CURRENCY-CD" srcLine="10 DFHCA-CURRENCY-CD PIC X(3) USAGE DISPLAY.">
+                    <startPos>269</startPos>
+                    <bytes>3</bytes>
+                    <maxBytes>3</maxBytes>
+                    <applicationDatatype datatype="CHAR"/>
+                </field>
+                <field name="DFHCA-CHARGES" originalName="DFHCA-CHARGES" included="Y" path="CONSTAPI-N.DFHCA-CHARGES" srcLine="10 DFHCA-CHARGES.">
+                    <startPos>272</startPos>
+                    <bytes>55</bytes>
+                    <maxBytes>55</maxBytes>
+                    <applicationDatatype datatype="STRUCT"/>
+                    <field name="DFHCA-CHARGE-BEARER" originalName="DFHCA-CHARGE-BEARER" included="Y" path="CONSTAPI-N.DFHCA-CHARGES.DFHCA-CHARGE-BEARER" srcLine="15 DFHCA-CHARGE-BEARER PIC X(20) USAGE DISPLAY.">
+                        <startPos>272</startPos>
+                        <bytes>20</bytes>
+                        <maxBytes>20</maxBytes>
+                        <applicationDatatype datatype="CHAR"/>
+                    </field>
+                    <field name="DFHCA-CHARGE-TYPE" originalName="DFHCA-CHARGE-TYPE" included="Y" path="CONSTAPI-N.DFHCA-CHARGES.DFHCA-CHARGE-TYPE" srcLine="15 DFHCA-CHARGE-TYPE PIC X(20) USAGE DISPLAY.">
+                        <startPos>292</startPos>
+                        <bytes>20</bytes>
+                        <maxBytes>20</maxBytes>
+                        <applicationDatatype datatype="CHAR"/>
+                    </field>
+                    <field name="DFHCA-CHARGE-AMOUNT" originalName="DFHCA-CHARGE-AMOUNT" included="Y" path="CONSTAPI-N.DFHCA-CHARGES.DFHCA-CHARGE-AMOUNT" srcLine="15 DFHCA-CHARGE-AMOUNT.">
+                        <startPos>312</startPos>
+                        <bytes>15</bytes>
+                        <maxBytes>15</maxBytes>
+                        <applicationDatatype datatype="STRUCT"/>
+                        <field name="DFHCA-CHARGE-AMT" originalName="DFHCA-CHARGE-AMT" included="Y" path="CONSTAPI-N.DFHCA-CHARGES.DFHCA-CHARGE-AMOUNT.DFHCA-CHARGE-AMT" srcLine="20 DFHCA-CHARGE-AMT PIC S9(10)V9(2) USAGE DISPLAY.">
+                            <startPos>312</startPos>
+                            <bytes>12</bytes>
+                            <maxBytes>12</maxBytes>
+                            <marshaller isSigned="Y" isSignLeading="N" isSignSeparate="N" isWCHAROnly="N">
+<typeConverter>ZONEDDECIMAL</typeConverter>
+                            </marshaller>
+                            <applicationDatatype datatype="DECIMAL" precision="12" scale="2"/>
+                        </field>
+                        <field name="DFHCA-CHARGE-CUR-CD" originalName="DFHCA-CHARGE-CUR-CD" included="Y" path="CONSTAPI-N.DFHCA-CHARGES.DFHCA-CHARGE-AMOUNT.DFHCA-CHARGE-CUR-CD" srcLine="20 DFHCA-CHARGE-CUR-CD PIC X(3) USAGE DISPLAY.">
+                            <startPos>324</startPos>
+                            <bytes>3</bytes>
+                            <maxBytes>3</maxBytes>
+                            <applicationDatatype datatype="CHAR"/>
+                        </field>
+                    </field>
+                </field>
+                <field name="DFHCA-CREATE-TS" originalName="DFHCA-CREATE-TS" included="Y" path="CONSTAPI-N.DFHCA-CREATE-TS" srcLine="10 DFHCA-CREATE-TS PIC X(32) USAGE DISPLAY.">
+                    <startPos>327</startPos>
+                    <bytes>32</bytes>
+                    <maxBytes>32</maxBytes>
+                    <applicationDatatype datatype="CHAR"/>
+                </field>
+                <field name="DFHCA-LAST-UPDATE-TS" originalName="DFHCA-LAST-UPDATE-TS" included="Y" path="CONSTAPI-N.DFHCA-LAST-UPDATE-TS" srcLine="10 DFHCA-LAST-UPDATE-TS PIC X(32) USAGE DISPLAY.">
+                    <startPos>359</startPos>
+                    <bytes>32</bytes>
+                    <maxBytes>32</maxBytes>
+                    <applicationDatatype datatype="CHAR"/>
+                </field>
+                <field name="DFHCA-FUNDS-AVAIL-FLAG" originalName="DFHCA-FUNDS-AVAIL-FLAG" included="Y" path="CONSTAPI-N.DFHCA-FUNDS-AVAIL-FLAG" srcLine="10 DFHCA-FUNDS-AVAIL-FLAG PIC X USAGE DISPLAY.">
+                    <startPos>391</startPos>
+                    <bytes>1</bytes>
+                    <maxBytes>1</maxBytes>
+                    <applicationDatatype datatype="CHAR"/>
+                </field>
+                <field name="DFHCA-RETURN-CD" originalName="DFHCA-RETURN-CD" included="Y" path="CONSTAPI-N.DFHCA-RETURN-CD" srcLine="10 DFHCA-RETURN-CD PIC S9(4) USAGE DISPLAY.">
+                    <startPos>392</startPos>
+                    <bytes>4</bytes>
+                    <maxBytes>4</maxBytes>
+                    <marshaller isSigned="Y" isSignLeading="N" isSignSeparate="N" isWCHAROnly="N">
+                        <typeConverter>ZONEDDECIMAL</typeConverter>
+                    </marshaller>
+                    <applicationDatatype datatype="DECIMAL" precision="4" scale="0"/>
+                </field>
+                <field name="DFHCA-ERROR-MSG" originalName="DFHCA-ERROR-MSG" included="Y" path="CONSTAPI-N.DFHCA-ERROR-MSG" srcLine="10 DFHCA-ERROR-MSG PIC X(200) USAGE DISPLAY.">
+                    <startPos>396</startPos>
+                    <bytes>200</bytes>
+                    <maxBytes>200</maxBytes>
+                    <applicationDatatype datatype="CHAR"/>
+                </field>
+            </field>
+        </segment>
+    </message>
+</ns2:message>
